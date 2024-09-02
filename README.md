@@ -20,6 +20,8 @@ jello::error("Hello, World!");
 jello::fatal("Hello, World!");
 ```
 
+![Output example](./.github/screenshot.png)
+
 ## Install
 
 Just copy the file into your project and adjust accordingly
