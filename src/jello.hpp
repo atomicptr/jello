@@ -115,7 +115,7 @@ namespace jello {
         std::abort();
     }
 
-    void configure(Level min_level = Level::Debug, std::optional<std::string> log_file_path = {}) {
+    inline void configure(Level min_level = Level::Debug, std::optional<std::string> log_file_path = {}) {
         internal::min_log_level = min_level;
 
         if (log_file_path.has_value()) {
