@@ -24,6 +24,7 @@ jello::fatal("Hello, World!");
 
 <details>
 <summary>Example: Overwrite raylib logging</summary>
+
 ```cpp
 SetTraceLogCallback([](int message_type, const char* text, va_list args) {
     std::vector<char> buffer(1024);
@@ -52,6 +53,7 @@ SetTraceLogCallback([](int message_type, const char* text, va_list args) {
     }
 });
 ```
+
 </details>
 
 ## Install
