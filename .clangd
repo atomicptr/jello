@@ -1,0 +1,21 @@
+CompileFlags:
+	Add &flags:
+		- -std=c++23
+		- -Wpedantic
+		- -Wall
+		- -Wextra
+		- -Wno-unused-parameter
+		- -Werror
+		- -Weffc++
+		- -Wshadow
+		- -Wunused-local-typedefs
+		- -Wmisleading-indentation
+		- -Wdouble-promotion
+		- -Wnull-dereference
+		- -Wzero-as-null-pointer-constant
+		- -Wnon-virtual-dtor
+		- -Woverloaded-virtual
+
+	Compiler: g++
+
+FallbackFlags: *flags
