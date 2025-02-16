@@ -4,8 +4,8 @@
 #include <format>
 #include <fstream>
 #include <ios>
+#include <iostream>
 #include <optional>
-#include <print>
 #include <string>
 
 namespace jello {
@@ -86,7 +86,7 @@ namespace jello {
                 std::vformat(format, std::make_format_args(args...))
             );
 
-            std::println(level >= Level::Error ? stderr : stdout, "{}", log_str);
+            (level >= Level::Error ? std::cerr : std::cout) << log_str << std::endl;
 
             if (log_file.has_value()) {
                 log_file.value() << log_str << std::endl;
@@ -112,7 +112,7 @@ namespace jello {
 
     void fatal(const std::string& format, auto&&... args) {
         internal::log(Level::Fatal, format, std::forward<decltype(args)>(args)...);
-        std::abort();
+        std::exit(1);
     }
 
     inline void configure(Level min_level = Level::Debug, std::optional<std::string> log_file_path = {}) {

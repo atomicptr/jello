@@ -1,7 +1,9 @@
+/build
+/.cache
 /*.log
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,c++
+# Created by https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++,meson,cmake
+# Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,linux,c++,meson,cmake
 
 ### C++ ###
 # Prerequisites
@@ -36,6 +38,25 @@
 *.exe
 *.out
 *.app
+
+### CMake ###
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+### CMake Patch ###
+CMakeUserPresets.json
+
+# External projects
+*-prefix/
 
 ### Linux ###
 *~
@@ -85,6 +106,28 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+### Meson ###
+# subproject directories
+/subprojects/*
+!/subprojects/*.wrap
+
+# Meson Directories
+meson-logs
+meson-private
+
+# Meson Files
+meson_benchmark_setup.dat
+meson_test_setup.dat
+sanitycheckcpp.cc     # C++ specific
+sanitycheckcpp.exe    # C++ specific
+
+# Ninja
+build.ninja
+.ninja_deps
+.ninja_logs
+
+# Misc
+
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
@@ -111,5 +154,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++
+# End of https://www.toptal.com/developers/gitignore/api/windows,macos,linux,c++,meson,cmake
+# Devenv
+.devenv*
+devenv.local.nix
 
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
